@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 100px; }
+        input, button { display: block; margin: 10px auto; padding: 10px; }
+    </style>
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            if (username === "") {
+                alert("Please enter a username!");
+                return;
+            }
+            localStorage.setItem("studentName", username);
+            window.location.href = "exam.html";
+        }
+    </script>
+</head>
+<body>
+    <h2>Login to Online Exam</h2>
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
+</body>
+</html>

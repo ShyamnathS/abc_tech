@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { margin-top: 100px; }
+        button { padding: 10px 20px; margin-top: 20px; }
+    </style>
+    <script>
+        function checkLogin() {
+            var user = localStorage.getItem("loggedInUser");
+
+            if (!user) {
+                window.location.href = "index.html";
+            } else {
+                document.getElementById("user").innerText = user;
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body onload="checkLogin()">
+    <div class="container">
+        <h2>Welcome, <span id="user"></span>!</h2>
+        <button onclick="logout()">Logout</button>
+    </div>
+</body>
+</html>

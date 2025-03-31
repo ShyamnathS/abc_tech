@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { margin-top: 100px; }
+        input { display: block; margin: 10px auto; padding: 10px; }
+        button { padding: 10px 20px; }
+    </style>
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("All fields are required!");
+                return false;
+            }
+
+            // Store the entered username in localStorage
+            localStorage.setItem("loggedInUser", username);
+
+            // Redirect to the welcome page
+            window.location.href = "welcome.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Login Form</h2>
+        <input type="text" id="username" placeholder="Enter Username">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="validateLogin()">Login</button>
+    </div>
+</body>
+</html>

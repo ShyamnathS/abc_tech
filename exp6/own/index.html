@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details Lookup</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input, button { padding: 10px; margin: 10px; }
+        .details { margin-top: 20px; display: none; border: 1px solid black; padding: 20px; width: 300px; margin-left: auto; margin-right: auto; }
+    </style>
+    <script>
+        function getUserDetails() {
+            var userId = document.getElementById("userId").value;
+            
+            // Fake XML Data (Simulating a Database)
+            var users = {
+                "101": { "name": "Alice", "email": "alice@example.com", "age": "25" },
+                "102": { "name": "Bob", "email": "bob@example.com", "age": "27" },
+                "103": { "name": "Charlie", "email": "charlie@example.com", "age": "22" }
+            };
+
+            if (users[userId]) {
+                document.getElementById("name").innerText = users[userId].name;
+                document.getElementById("email").innerText = users[userId].email;
+                document.getElementById("age").innerText = users[userId].age;
+                document.querySelector(".details").style.display = "block";
+            } else {
+                alert("User not found!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>User Lookup System</h2>
+    <input type="text" id="userId" placeholder="Enter User ID (101, 102, 103)">
+    <button onclick="getUserDetails()">Get Details</button>
+
+    <div class="details">
+        <h3>User Details</h3>
+        <p><strong>Name:</strong> <span id="name"></span></p>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+        <p><strong>Age:</strong> <span id="age"></span></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        button { padding: 10px; margin-top: 20px; }
+    </style>
+    <script>
+        function showResult() {
+            var student = localStorage.getItem("studentName");
+            var score = localStorage.getItem("examScore");
+            document.getElementById("user").innerText = student;
+            document.getElementById("score").innerText = score + "/3";
+        }
+        function viewMarkList() {
+            window.location.href = "marks.html";
+        }
+    </script>
+</head>
+<body onload="showResult()">
+    <h2>Exam Result</h2>
+    <p>Student: <span id="user"></span></p>
+    <p>Score: <span id="score"></span></p>
+    <button onclick="viewMarkList()">View Mark List</button>
+</body>
+</html>
