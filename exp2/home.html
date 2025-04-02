@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
+        header { background: #007bff; color: white; padding: 15px; font-size: 24px; }
+        nav { background: #333; padding: 10px; }
+        nav a { color: white; text-decoration: none; margin: 10px; padding: 10px; display: inline-block; }
+        nav a:hover { background: #555; }
+        .container { padding: 20px; }
+        .button { background: #28a745; color: white; padding: 10px; border: none; cursor: pointer; }
+        .button:hover { background: #218838; }
+        footer { background: #333; color: white; padding: 10px; position: fixed; bottom: 0; width: 100%; }
+        @media (max-width: 600px) { nav a { display: block; text-align: center; } }
+    </style>
+</head>
+<body>
+    <header>My Responsive Website</header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <h2>Welcome to My Website</h2>
+        <p>This is a basic responsive webpage with interactive elements.</p>
+        <button class="button" onclick="showMessage()">Click Me</button>
+    </div>
+    <footer>© 2025 My Website</footer>
+    <script>
+        function showMessage() {
+            alert("Hello! This is an interactive button.");
+        }
+    </script>
+</body>
+</html>

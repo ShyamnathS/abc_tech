@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Reminder</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #birthdayList { list-style: none; padding: 0; }
+        li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h2>Birthday Reminder</h2>
+    
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="date" id="date">
+    <button onclick="addBirthday()">Add Birthday</button>
+    
+    <ul id="birthdayList"></ul>
+
+    <script>
+        function addBirthday() {
+            let name = document.getElementById("name").value;
+            let date = document.getElementById("date").value;
+            if (name && date) {
+                let li = document.createElement("li");
+                li.innerHTML = `${name} - ${date} <button onclick="removeBirthday(this)">X</button>`;
+                document.getElementById("birthdayList").appendChild(li);
+                document.getElementById("name").value = "";
+                document.getElementById("date").value = "";
+            } else {
+                alert("Please enter both name and date.");
+            }
+        }
+
+        function removeBirthday(button) {
+            button.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Voting Application</h2>
+        <div id="votingButtons">
+            <button onclick="vote('Alice')">Vote for Alice</button>
+            <button onclick="vote('Bob')">Vote for Bob</button>
+            <button onclick="vote('Charlie')">Vote for Charlie</button>
+        </div>
+        <div id="results" class="result"></div>
+    </div>
+
+    <script>
+        let votes = { "Alice": 0, "Bob": 0, "Charlie": 0 };
+
+        function vote(candidate) {
+            votes[candidate]++;
+            displayResults();
+        }
+
+        function displayResults() {
+            let resultDiv = document.getElementById("results");
+            resultDiv.innerHTML = "<strong>Voting Results:</strong><br>";
+            for (let candidate in votes) {
+                resultDiv.innerHTML += `${candidate}: ${votes[candidate]} votes<br>`;
+            }
+        }
+    </script>
+
+</body>
+</html>
